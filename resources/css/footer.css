@@ -1,0 +1,82 @@
+.footer {
+    background-color:#701969;
+    color: #eee;
+    padding: 40px 20px;
+    font-family: Arial, sans-serif;
+}
+
+.footer-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.footer-box {
+    flex: 1 1 200px;
+}
+
+.footer-box h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.footer-box ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-box ul li {
+    margin-bottom: 8px;
+    transition: all .7s ease;
+    position: relative;
+}
+
+/* When li is hovered, show the arrow */
+.footer-box ul li:hover .link-arrow {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.footer-box ul li a {
+    color: #ccc;
+    text-decoration: none;
+    transition: all .7s ease;
+}
+
+.footer-box ul li a:hover {
+    color: var(--primary-blue);
+}
+.connect-icon li{
+    display: flex;
+    gap: 10px;
+    justify-content:left;
+}
+
+.connect-icon li i{
+    font-size: 20px;
+    transition: all .7s ease;
+}
+.connect-icon li:hover i{
+    color:  var(--primary-blue);
+}
+
+/* Hide arrow by default */
+.link-arrow {
+    position: absolute;
+    left: -30px;
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: all 0.7s ease;
+    pointer-events: none;
+    color: #fff; /* or your preferred arrow color */
+}
+
+.link-arrow i{
+    font-size: 25px;
+    color: var(--primary-blue);
+}
+

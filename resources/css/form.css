@@ -1,0 +1,131 @@
+/* Form Container */
+form {
+    background: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    max-width: 700px;
+    margin: 0 auto;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Headings */
+  h4 {
+    margin-bottom: 15px;
+    color: #333;
+  }
+  
+  /* Group Wrapper */
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  /* Text Inputs, Selects, Passwords */
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  select,
+  textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 2rem;
+    background-color: white;
+    color: #333;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    margin: 0.5rem 0;
+    height: 3rem;
+    box-sizing: border-box;
+  }
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select,
+textarea {
+  background-color: white !important;
+  color: #333 !important;
+  border: 1px solid #ccc;
+  border-radius: 2rem;
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  height: 3rem;
+}
+
+
+  /* Button Styles */
+  .btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+  }
+  
+  .primary {
+    background-color: #007bff;
+    color: #fff;
+  }
+  
+  .secondary {
+    background-color: #ccc;
+    color: #333;
+  }
+  
+  /* Checkbox */
+  .checkbox {
+    display: flex;
+    align-items: center;
+  }
+  
+  .checkbox input {
+    margin-right: 10px;
+  }
+  
+  /* Steps */
+  .step {
+    display: none;
+  }
+  
+  .step.active {
+    display: block;
+  }
+  
+  /* Progress Bar */
+  .progress-bar {
+    margin-bottom: 30px;
+  }
+  
+  .step-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+  
+  .step-label {
+    background-color: #e0f7fa;
+    color: #00796b;
+    padding: 4px 10px;
+    border-radius: 20px;
+  }
+  
+  .step-indicators {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .step-indicator {
+    flex: 1;
+    height: 5px;
+    background: #ccc;
+    margin: 0 2px;
+    border-radius: 2px;
+  }
+  
+  /* Utility */
+  .hidden {
+    display: none;
+  }
+  
