@@ -75,7 +75,7 @@
         </div>        
         <div class="hero">
             <div class="hero-text">
-                <h1>Bloommonie Your Cloud Based Point of Sale for Every Business & Location. We are the best</h1>
+                <h1>Bloommonie Your Cloud Based Point of Sale for Every Business & Location. We are the best for now</h1>
                 <p>Keep Track of your sales and Inventory with our point of sale Software SaaS,Monitor stock levels instantly across all locations, reducing the chances of overselling or stockouts. . Keep customers coming back with rewards while automatically synchronizing customer and inventory information in the .
                 </p>
                 <div class="hero-link">
