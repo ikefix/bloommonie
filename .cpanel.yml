@@ -1,6 +1,7 @@
 ---
 deployment:
   tasks:
+    - /bin/cp -r * /home/blootjmm/public_html
     - export COMPOSER_ALLOW_SUPERUSER=1
     - /opt/cpanel/composer/bin/composer install --no-dev --optimize-autoloader
     # - php artisan migrate --force
