@@ -1,7 +1,10 @@
+---
 deployment:
   tasks:
-    - export COMPOSER_ALLOW_SUPERUSER=1
-    - /opt/cpanel/composer/bin/composer install --no-dev
+    - export DEPLOYPATH=/home/blootjmm/public_html
+    - /bin/cp -R public/* $DEPLOYPATH
+    - /opt/cpanel/composer/bin/composer install --no-dev --working-dir=$DEPLOYPATH/..
+    - cd $DEPLOYPATH/..
     - npm install
     - npm run build
     - php artisan migrate --force
