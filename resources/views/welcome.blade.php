@@ -81,7 +81,7 @@
                 </p>
                 <div class="hero-link">
                     <a class="custom-button trial" href="">Start 14 Days Free Trial</a>
-                    <a class="custom-button demo" href=""><b>Book a Demo Now</b></a>
+                    <a class="custom-button demo" href=""><b>Book a Demo Now here</b></a>
                 </div>
                 <small>No Credit Card Required!</small>
             </div>
