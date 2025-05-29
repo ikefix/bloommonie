@@ -77,8 +77,7 @@
         <div class="hero">
             <div class="hero-text">
                 <h1>Bloommonie Your No 1 Cloud Based Point of Sale for Every Business & Location. We are the best for now</h1>
-                <p>Keep Track of your sales and Inventory with our point of sale Software SaaS,Monitor stock levels instantly across all locations, reducing the chances of overselling or stockouts. . Keep customers coming back with rewards while automatically synchronizing customer and inventory information in the .
-                </p>
+                <p>Complete sales quickly with our point of sale SaaS</p>
                 <div class="hero-link">
                     <a class="custom-button trial" href="">Start 14 Days Free Trial</a>
                     <a class="custom-button demo" href=""><b>Book a Demo Now here</b></a>
