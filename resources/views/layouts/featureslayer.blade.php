@@ -1,6 +1,4 @@
 
- 
-@vite(['resources/sass/app.scss', 'resources/js/app.js'])
 <section class="trackfeature">
   <h2 class="feat">FEATURES</h2>
   <div class="features_gen">
