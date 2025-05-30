@@ -10,10 +10,7 @@
         <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">   
          <link rel="stylesheet" href="styles.css">
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-        <link rel="stylesheet" href="">
-
-        <!-- Styles -->
-       {{-- @vite(['resources/sass/app.scss', 'resources/js/app.js']) --}}
+        <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
 
         <style>
@@ -26,7 +23,6 @@
         
         <div id="defaultNavbar" class="hidden-navbar">
             @include('layouts.navbar')
-             @include('layouts.app')
         </div>
         {{-- @if (Route::has('login'))
         <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">

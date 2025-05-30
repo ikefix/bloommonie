@@ -15,6 +15,11 @@
 
     <!-- Plain CSS/JS -->
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/features.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/footer.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/pricing.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/pricingaction.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/support.css') }}">
     <script src="{{ asset('js/app.js') }}" defer></script>
 </head>
 <body>

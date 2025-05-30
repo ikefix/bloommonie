@@ -1,3 +1,3 @@
 @extends('layouts.footer')
+@include('layouts.navbar')
 @extends('layouts.support')
-@extends('layouts.app')
