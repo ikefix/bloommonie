@@ -11,7 +11,8 @@
 
         <!-- Styles -->
         {{-- @vite(['resources/sass/app.scss', 'resources/js/app.js', 'resources/css/features.css']) --}}
-        @vite(['resources/sass/app.scss', 'resources/js/app.js', 'resources/css/features.css'])
+        @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+        <link rel="stylesheet" href="resources/css/features.css">
 
     
     </head>
