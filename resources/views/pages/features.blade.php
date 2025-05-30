@@ -10,7 +10,8 @@
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
         <!-- Styles -->
-        @vite(['resources/sass/app.scss', 'resources/js/app.js', 'resources/css/features.css'])
+        {{-- @vite(['resources/sass/app.scss', 'resources/js/app.js', 'resources/css/features.css']) --}}
+        @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 
     
     </head>
