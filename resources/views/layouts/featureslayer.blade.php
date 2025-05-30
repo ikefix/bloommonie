@@ -1,4 +1,4 @@
-
+@include('layouts.app')
 <section class="trackfeature">
   <h2 class="feat">FEATURES</h2>
   <div class="features_gen">

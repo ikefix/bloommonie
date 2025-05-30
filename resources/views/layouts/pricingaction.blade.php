@@ -8,8 +8,8 @@
   <title>BloomPOS Pricing Plans - Tracepos</title>
   <link rel="stylesheet" href="resources/css/app.css">
   {{-- <link rel="stylesheet" href="resources/css/pricingaction.css"> --}}
-   <link rel="stylesheet" href="resources/css/app.css">
-  @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+   {{-- <link rel="stylesheet" href="resources/css/app.css">
+  @vite(['resources/sass/app.scss', 'resources/js/app.js']) --}}
  
 </head>
 <body>
