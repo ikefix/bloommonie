@@ -588,7 +588,7 @@ input, button, select, optgroup, textarea {
   
   
 /* HERO SECTION */
-/* .hero {
+.hero {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -597,7 +597,7 @@ input, button, select, optgroup, textarea {
     margin: auto;
     gap: 2rem;
     flex-wrap: wrap; /* For responsive stacking on smaller screens */
-} */
+}
 
 .hero-text {
     flex: 1;
