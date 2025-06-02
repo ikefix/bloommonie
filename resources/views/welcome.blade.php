@@ -10,13 +10,13 @@
         <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">   
          <link rel="stylesheet" href="styles.css">
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        <link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/pricing.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/footer.css') }}">
 
 
         <style>
-            body {
-                font-family: 'Nunito', sans-serif;
-            }
         </style>
     </head>
     <body class="antialiased">
@@ -44,6 +44,10 @@
                 {{-- {{ config('app.name', 'Laravel') }} --}}
                 BloomMonie
             </a>
+
+            {{-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+              <i class='bx bx-menu-wider'></i> 
+            </button> --}}
         
             <!-- Middle Navigation -->
             <div class="custom-middle">
@@ -120,12 +124,12 @@
         <div><h2>BloomPOS can be used in any of the Business</h2></div>
         <div>
           <div class="usecase">
-            <button data-business="grocery">Grocery Store</button>
-            <button data-business="vape">Vape Shop</button>
+            <button data-business="grocery">Super Market</button>
+            <button data-business="vape">Fashion</button>
             <button data-business="book">Book Store</button>
             <button data-business="pharmacy">Pharmacy Shop</button>
-            <button data-business="jewelry">Jewelry Store</button>
-            <button data-business="general">General Shop</button>
+            <button data-business="jewelry">Hair/Cosmetics</button>
+            <button data-business="general">Lot's More</button>
           </div>
         </div>
       </div>
@@ -196,12 +200,12 @@
           </div>
         </div>
       </div>
-@include("layouts.pricing")
+@include("layouts.price")
       <div class="calltoaction">
         <div class="cta-text">
           <h1>Let’s Get Started</h1>
           <h1>Start your free trial today and discover the transformative power of our Smart Inventory Management System.</h1>
-          <button class="start-free">Start 14 days Free Trial</button>
+          <a href="#contact"><button class="start-free">Start 14 days Free Trial</button></a>
         </div>
       </div>
       <div class="faq-wrapper">
@@ -209,7 +213,7 @@
           <h5>Frequently Asked Questions</h5>
           <h1>Do You Have Any Questions?</h1>
           <p>Have questions about SaasyPOS? We’ve got you covered. Explore our FAQ section to find answers to common inquiries.</p>
-          <button class="ask-btn">Ask Your Question</button>
+          <a href="#contact"><button class="ask-btn">Ask Your Question</button></a>
         </div>
       
         <div class="faq-columns">
@@ -233,13 +237,61 @@
             <button class="faq-question">Do I need a credit card?<span class="icon">+</span></button>
             <div class="faq-answer">You can start your free trial without a credit card.</div>
           </div>
-          <di```````v class="faq-item">
+          <div class="faq-item">
             <button class="faq-question">How do I get started?<span class="icon">+</span></button>
             <div class="faq-answer">Just click "Get Started" on our homepage to begin your setup.</div>
           </div>
         </div>
       </div>
+
+      <section id="contact">
+        <div class="contact-container">
+          <!-- Left: Form -->
+          <div class="contact-form">
+            <h2>Send Us a Message</h2>
+            <form action="send-message.php" method="POST">
+              <label for="name">Your Name</label>
+              <input type="text" id="name" name="name" required />
+
+              <label for="email">Your Email</label>
+              <input type="email" id="email" name="email" required />
+
+              <label for="subject">Subject</label>
+              <input type="text" id="subject" name="subject" required />
+
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" required></textarea>
+
+              <button type="submit">Send Message</button>
+            </form>
+          </div>
+
+          <!-- Right: Text Content -->
+          <div class="contact-info">
+            <h2>Get in Touch</h2>
+            <p>We’d love to hear from you! Whether you have a question about features, pricing, need a demo, or anything else — our team is ready to answer all your questions.</p>
+            <p><strong>Email:</strong> info@yourcompany.com</p>
+            <p><strong>Phone:</strong> +234 800 000 0000</p>
+            <p><strong>Address:</strong> 123 Company Street, Lagos, Nigeria</p>
+          </div>
+        </div>
+      </section>
+
+
       @include('layouts.footer')
+
+      <script>
+document.addEventListener('DOMContentLoaded', function () {
+  const toggleButton = document.querySelector('.navbar-toggler');
+  const middleMenu = document.querySelector('.custom-middle');
+  const rightMenu = document.querySelector('.custom-right');
+
+  toggleButton.addEventListener('click', function () {
+    middleMenu.classList.toggle('show');
+    rightMenu.classList.toggle('show');
+  });
+});
+</script>
       
       <script>
         document.addEventListener("DOMContentLoaded", function () {
@@ -248,7 +300,7 @@
               title: "Grocery Store",
               description:
                 "Run your grocery store efficiently with real-time stock tracking, barcode scanning, and quick billing using BloomPOS.",
-              image: "images/grocery.jpg"
+              image: "images/pics.jpg"
             },
             vape: {
               title: "Vape Shop",
@@ -260,7 +312,7 @@
               title: "Book Store",
               description:
                 "Bookstores benefit from organized inventory, category filters, and easy sales tracking with BloomPOS.",
-              image: "images/pics.jpg"
+              image: ""
             },
             pharmacy: {
               title: "Pharmacy Shop",

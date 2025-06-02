@@ -28,15 +28,15 @@ Route::get('/home', [HomeController::class, 'index'])->name('home'); // Ensure H
 
 // PAGES LINKS
 Route::get('/features', function () {
-    return view('pages.features');
+    return view('layouts.featureslayer');
 })->name('features');
 
 Route::get('/pricing', function () {
-    return view('pages.pricing');
+    return view('layouts.pricing');
 })->name('pricing');
 
 Route::get('/support', function () {
-    return view('pages.support');
+    return view('layouts.support');
 })->name('support');
 
 Route::post('/register-company', [CompanyRegistrationController::class, 'store'])->name('register-company');

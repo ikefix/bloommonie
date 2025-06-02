@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="{{ asset('css/pricing.css') }}">
     <link rel="stylesheet" href="{{ asset('css/pricingaction.css') }}">
     <link rel="stylesheet" href="{{ asset('css/support.css') }}">
-    {{-- <script src="{{ asset('js/app.js') }}" defer></script> --}}
+    <script src="{{ asset('js/app.js') }}" defer></script>
 </head>
 <body>
     <div id="app">

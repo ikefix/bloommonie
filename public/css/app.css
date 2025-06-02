@@ -1,5 +1,10 @@
+html{
+  scroll-behavior: smooth;
+}
+
 body{
     background:  white;
+    font-family: 'Nunito', sans-serif;
 }
 
 ::selection{
@@ -16,12 +21,119 @@ body{
     --text-color: black;
 }
 
+.container{
+  display: flex;
+  padding: .7rem 1rem;
+  justify-content: center;
+  text-align: center !important;
+}
+
+.navbar-brand{
+  display: flex;
+  align-self: center;
+}
+
+
+#contact {
+  background-color: #f4f4f4;
+  padding: 60px 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.contact-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  max-width: 1100px;
+  margin: auto;
+  background: #fff;
+  border-radius: 12px;
+  padding: 40px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.08);
+}
+
+.contact-form,
+.contact-info {
+  flex: 1 1 400px;
+}
+
+.contact-form h2,
+.contact-info h2 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form label {
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #555;
+}
+
+.contact-form input,
+.contact-form textarea {
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+  background-color: #fafafa;
+  transition: border-color 0.3s;
+}
+
+.contact-form textarea{
+  height: 30vh;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: var(--primary-blue);
+  outline: none;
+}
+
+.contact-form button {
+  padding: 14px;
+  background-color: var(--primary-blue);
+  color: white;
+  border: none;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.contact-form button:hover {
+  background-color: var(--primary-blue);
+}
+
+.contact-info p {
+  margin-bottom: 16px;
+  font-size: 16px;
+  color: #444;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .contact-container {
+    flex-direction: column;
+    padding: 20px;
+  }
+}
+
+
 .custom-nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 20px 20px;
     background: #fff;
+}
+
+.navbar-toggler{
+  display: none;
 }
 
 .custom-logo {
@@ -35,6 +147,7 @@ body{
     flex-grow: 1;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 .custom-menu, .custom-right {
@@ -51,6 +164,7 @@ body{
 
 .custom-right li{
   margin-bottom: 0;
+  align-self: center;
 }
 
 .custom-item {
@@ -149,13 +263,14 @@ body{
 }
 
 .feature-section {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
     gap: 1rem;
-    padding: 6rem;
+    justify-content: center;
 }
 
 .feature-card {
+  width: 250px;
     text-align: left;
     padding: 1rem;
     border-radius: 10px;
@@ -567,6 +682,84 @@ input, button, select, optgroup, textarea {
     .aboutbloom li p {
       font-size: 15px;
     }
+
+    .navbar-toggler{
+      display: block;
+      background-color: transparent;
+      border: none;
+    }
+
+    .navbar-toggler i{
+      font-size: 1.5rem;
+      color: var(--primary-blue);
+      font-weight: bold;
+    }
+
+.custom-middle,
+.custom-right {
+  display: none;
+}
+
+.container{
+  flex-direction: column;
+  gap: 10px;
+}
+
+.custom-middle.show,
+.custom-right.show {
+  display: flex;
+}
+
+.custom-middle.show .custom-menu,
+.custom-right.show .custom-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.custom-right {
+    margin-left: 0;
+    justify-content: center;
+}
+
+.faq-wrapper{
+  flex-direction: column;
+  margin: 0;
+  padding: 40px 5px;
+}
+
+.faq-columns {
+    width: 98%;
+}
+
+.con-name{
+  display: flex;
+  justify-content: space-between;
+}
+
+.feature-card {
+  width: 280px;
+}
+
+.business-support {
+    padding: .7rem;
+}
+
+.usecase button {
+    width: 170px;
+}
+
+.usecase {
+    gap: 0;
+}
+
+
+
+/* .hidden-navbar {
+    width: 55%;
+} */
+
   }
   
   /* Responsive: Stack content on smaller screens */
