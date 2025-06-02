@@ -78,8 +78,8 @@
         </div>        
         <div class="hero">
             <div class="hero-text">
-                <h1> of Your Cloud Based Point of Sale for Every Business & Location. We are the best for now</h1>
-                <p>Keep Track of your sales and Inventory with our point of sale Software SaaS,Monitor stock levels instantly across all locations, reducing the chances of overselling or stockouts. . Keep customers coming back with rewards while automatically synchronizing customer and inventory information in the .
+                <h1> Your Cloud-Based POS System – Built for Every Store, Customer, and Location</h1>
+                <p>"Track sales and inventory in real time with our cloud-based POS software. Instantly monitor stock across all locations, avoid overselling, and keep your data seamlessly synchronized.
                 </p>
                 <div class="hero-link">
                     <a class="custom-button trial" href="">Start 14 Days Free Trial</a>
