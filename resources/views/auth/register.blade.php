@@ -1,8 +1,8 @@
-{{-- @vite(['resources/css/form.css']) --}}
 @extends('layouts.app')
 
 @section('content')
-<div>
+<link rel="stylesheet" href="/css/register.css">
+<div class="register-wrapper">
   <form method="POST" action="{{ route('register') }}">
     @csrf
 
@@ -23,7 +23,7 @@
     </div>
 
     <!-- Step 1 -->
-    <div id="step-1">
+    <div id="step-1" class="step">
       <h4>Personal Info</h4>
       <div class="form-group">
         <input type="text" placeholder="Enter your name" id="name" name="name" required>
@@ -40,10 +40,11 @@
       <div class="form-group">
         <input type="password" placeholder="Confirm Password" id="password_confirmation" name="password_confirmation" required>
       </div>
+      <button type="button" class="btn primary next-btn">Next</button>
     </div>
 
     <!-- Step 2 -->
-    <div id="step-2">
+    <div id="step-2" class="step">
       <h4>Company Info</h4>
       <div class="form-group">
         <input type="text" placeholder="Company Name" id="company_name" name="company_name" required>
@@ -94,10 +95,12 @@
       <div class="form-group hidden" id="customInventorySystemContainer">
         <input type="text" name="current_inventory_system_other" placeholder="If Other, please specify">
       </div>
+      <button type="button" class="btn secondary prev-btn">Previous</button>
+      <button type="button" class="btn primary next-btn">Next</button>
     </div>
 
     <!-- Step 3 -->
-    <div id="step-3">
+    <div id="step-3" class="step">
       <h4>Location & Industry</h4>
       <div class="form-group">
         <select id="country" name="country" required>
@@ -120,10 +123,10 @@
           <option value="Ikeja">Ikeja</option>
         </select>
       </div>
-
+      <button type="button" class="btn secondary prev-btn">Previous</button>
       <button type="submit" class="btn primary">Sign Up for Free</button>
     </div>
   </form>
-  
 </div>
+<script src="/js/register.js"></script>
 @endsection

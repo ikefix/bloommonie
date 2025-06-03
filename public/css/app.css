@@ -216,7 +216,7 @@ body{
 }
 
 .border-btn:hover{
-    background: var(--accent-grey-dark);
+    background-color: var(--primary-blue);
     color: white;
     border: var(--accent-grey-dark);
 }
@@ -229,7 +229,7 @@ body{
 }
 
 .login-button:hover {
-    background: var(--accent-grey);
+    background: var(--primary-blue);
     border: 1px solid var(--accent-grey);
     color: white;
 }
@@ -341,10 +341,10 @@ input, button, select, optgroup, textarea {
     font-family: inherit;
     font-size: inherit;
     line-height: inherit;
-    background-color:#f10ade ;
+    background-color:whitesmoke;
     border-radius: 2rem;
     height: 3rem;
-    color: white;
+    color: black;
 }
 .business-card {
     border: 1px solid #e0e0e0;

@@ -1,0 +1,82 @@
+.register-wrapper {
+  max-width: 600px;
+  margin: 40px auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+h4 {
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select {
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+button.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-right: 10px;
+  margin-top: 15px;
+}
+
+.btn.primary {
+  background-color:var(--primary-blue);
+  color: white;
+}
+
+.btn.secondary {
+  background-color: var(--primary-blue);
+  color:black;
+}
+
+.progress-bar {
+  margin-bottom: 30px;
+}
+
+.step-labels {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-size: 14px;
+  color:black;
+}
+
+.step-indicators {
+  display: flex;
+  justify-content: space-between;
+}
+
+.step-indicator {
+  width: 30%;
+  height: 4px;
+  background-color: #ccc;
+  border-radius: 2px;
+}
+
+.step-indicator.active {
+  background-color:var(--primary-blue);
+}
+
+.step {
+  display: none;
+}
+
+.hidden {
+  display: none;
+}
