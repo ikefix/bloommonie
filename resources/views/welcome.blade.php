@@ -111,7 +111,7 @@
         <div class="feature-card">
             <img src="" alt="">
             <h4>Automated Work</h4>
-            <p>Complete sales faster with our easy-to-use Cloud based Point of Sale software that keeps all information at your fingertips.</p>
+            <p> Cloud based Point of Sale software that keeps all information at your fingertips.</p>
         </div>
         <div class="feature-card">
             <img src="" alt="">
