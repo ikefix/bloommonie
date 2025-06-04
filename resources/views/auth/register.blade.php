@@ -3,7 +3,7 @@
 @section('content')
 <link rel="stylesheet" href="/css/register.css">
 <div class="register-wrapper">
-  <form method="POST" action="{{ route('create') }}">
+  <form method="POST" action="{{ route('register') }}">
     @csrf
 
     <div id="alert"></div>
