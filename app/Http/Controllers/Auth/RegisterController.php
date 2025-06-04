@@ -16,7 +16,7 @@ use App\Mail\WelcomeToPOSMail;
 class RegisterController extends Controller
 {
 
-protected function register(array $data)
+protected function create(array $data)
 {
     // Store password temporarily to email it
     $plainPassword = $data['password'];
