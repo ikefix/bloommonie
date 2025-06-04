@@ -1,10 +1,7 @@
 @extends('layouts.app')
-
-@section('styles')
 <link rel="stylesheet" href="{{ asset('css/login.css') }}">
-@endsection
-
 @section('content')
+
 <div class="login-container">
     <h2>Login</h2>
     <form method="POST" action="{{ route('login') }}">
