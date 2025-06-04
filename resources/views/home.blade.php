@@ -1,4 +1,4 @@
-@vite([ 'resources/css/form.css'])
+{{-- @vite([ 'resources/css/form.css']) --}}
 @extends('layouts.app')
 
 @section('content')
