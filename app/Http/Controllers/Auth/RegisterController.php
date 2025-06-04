@@ -55,5 +55,10 @@ protected function create(array $data)
 
     return $user;
 }
+public function showRegistrationForm()
+{
+    return view('auth.register'); // or your actual registration view
+}
+
 
 }
