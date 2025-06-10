@@ -28,26 +28,31 @@ class CompanyRegistrationController extends Controller
         'city' => 'required|string',
     ]);
     
-    $company = Company::create([
-        'name' => $validated['company_admin'],
-        'email' => $validated['company_email'],
-        'phonenumber' => $validated['company_phone'],
-        'password' => Hash::make($validated['password']),
-        // 'confirmpassword' => $validated['confirm_password'], ❌ remove this
-        'companyname' => $validated['company_name'],
-        'employees' => $validated['num_employees'],
-        'revenue' => $validated['annual_revenue'],
-        'industry' => $validated['industry'] === 'Other'
-            ? $validated['custom_industry']
-            : $validated['industry'],
-        'inventory' => $validated['current_inventory_system'] === 'other'
-            ? $validated['current_inventory_system_other']
-            : $validated['current_inventory_system'],
-        'country' => $validated['country'],
-        'state' => $validated['state'],
-        'city' => $validated['city'],
-    ]);
-    
+   $company = Company::create([
+    'name' => $validated['company_admin'],
+    'email' => $validated['company_email'],
+    'phonenumber' => $validated['company_phone'],
+    'password' => Hash::make($validated['password']),
+    'companyname' => $validated['company_name'],
+    'employees' => $validated['num_employees'],
+    'revenue' => $validated['annual_revenue'],
+    'industry' => $validated['industry'] === 'Other'
+        ? $validated['custom_industry']
+        : $validated['industry'],
+    'inventory' => $validated['current_inventory_system'] === 'other'
+        ? $validated['current_inventory_system_other']
+        : $validated['current_inventory_system'],
+    'country' => $validated['country'],
+    'state' => $validated['state'],
+    'city' => $validated['city'],
+]);
+
+// ✅ Create a Tenant (you must have `tenants` table migrated)
+$tenant = Tenant::create([
+    'name' => $validated['company_name'],
+    'domain' => strtolower(str_replace(' ', '', $validated['company_name'])) . '.yourdomain.com',
+]);
+
     return response()->json([
         'success' => true,
         'message' => 'Company registered successfully!',

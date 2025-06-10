@@ -3,33 +3,19 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Tenant extends Model
 {
-    use HasFactory;
-
+    // Fillable fields example (adjust as per your migration)
     protected $fillable = [
-        'user_id',
-        'slug',
-        'plan',
-        'expires_at',
+        'name',
+        'domain',
+        // other tenant-specific fields
     ];
 
-    protected $dates = ['expires_at'];
-
-    public function user()
+    // One tenant has many users
+    public function users()
     {
-        return $this->belongsTo(User::class);
-    }
-
-    public function getPosUrlAttribute()
-    {
-        return 'https://' . $this->slug . 'bloommonie.com';
-    }
-
-    public function isActive()
-    {
-        return now()->lt($this->expires_at);
+        return $this->hasMany(User::class);
     }
 }

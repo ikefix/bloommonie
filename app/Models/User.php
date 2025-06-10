@@ -28,6 +28,7 @@ class User extends Authenticatable
         'city',
         'role',
         'shop_id',
+        'tenant_id', // Add this if not yet present in DB
     ];
 
     protected $hidden = [
@@ -39,7 +40,14 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    // POS relationships
+    // Relationships
+
+    // Each user belongs to one tenant
+    public function tenant()
+    {
+        return $this->belongsTo(Tenant::class);
+    }
+
     public function shops()
     {
         return $this->hasMany(Shop::class);

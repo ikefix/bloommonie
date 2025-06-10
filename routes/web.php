@@ -7,6 +7,7 @@ use App\Http\Controllers\CompanyRegistrationController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\Auth\RegisterController;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
