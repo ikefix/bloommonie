@@ -19,8 +19,12 @@ use App\Http\Controllers\Auth\RegisterController;
 |
 */
 
+// Route::get('/', function () {
+//     return view('welcome'); // Ensure 'welcome.blade.php' exists
+// });
+
 Route::get('/', function () {
-    return view('welcome'); // Ensure 'welcome.blade.php' exists
+    return view('pos.welcome'); // This should point to your actual frontend view
 });
 
 Auth::routes(); // Ensure Auth is imported

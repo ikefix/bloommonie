@@ -28,6 +28,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
 Auth::routes();
 
 // Home route accessible without tenant context (optional)
