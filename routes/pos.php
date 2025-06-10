@@ -24,10 +24,16 @@ use App\Http\Controllers\CategoryController;
 */
 
 // Public routes (no tenant required)
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
+// Route::get('/', function () {
+//     return view('pos.welcome'); // This should point to your actual frontend view
+// });
+Route::get('/', function () {
+    return view('pos.welcome');
+})->name('pos.welcome');
 
 Auth::routes();
 

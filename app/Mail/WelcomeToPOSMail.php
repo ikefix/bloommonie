@@ -22,7 +22,8 @@ class WelcomeToPOSMail extends Mailable
 
     public function build()
     {
-        $url = url('/');
+        $url = route('pos.welcome'); // No tenant needed
+
 
         return $this->subject('Welcome to Your POS Dashboard')
             ->view('emails.welcome')
