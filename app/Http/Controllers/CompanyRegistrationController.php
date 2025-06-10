@@ -50,7 +50,7 @@ class CompanyRegistrationController extends Controller
 // ✅ Create a Tenant (you must have `tenants` table migrated)
 $tenant = Tenant::create([
     'name' => $validated['company_name'],
-    'domain' => strtolower(str_replace(' ', '', $validated['company_name'])) . '.yourdomain.com',
+    'domain' => strtolower(str_replace(' ', '', $validated['company_name'])) . 'bloommonie.com',
 ]);
 
     return response()->json([
