@@ -22,18 +22,6 @@ class AppServiceProvider extends ServiceProvider
      *
      * @return void
      */
-public function boot(): void
-{
-    parent::boot();
 
-    $this->routes(function () {
-        Route::middleware('web')
-            ->group(base_path('routes/web.php'));
-
-        Route::middleware('web') // Load your POS routes
-            // ->prefix('client')    // Optional: Prefix if needed
-            ->group(base_path('routes/pos.php'));
-    });
-}
 
 }
