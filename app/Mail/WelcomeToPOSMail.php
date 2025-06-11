@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Mail;
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
@@ -22,7 +21,7 @@ class WelcomeToPOSMail extends Mailable
 
     public function build()
     {
-        $url = route('pos.welcome'); // ✅ This will now work
+        $url = route('pos.welcome'); 
 
 
 

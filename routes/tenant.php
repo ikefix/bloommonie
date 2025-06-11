@@ -2,7 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\ServiceProvider;
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ManagerController;
@@ -15,34 +14,13 @@ use App\Http\Controllers\ProductPermissionController;
 use App\Http\Controllers\StockTransferController;
 use App\Http\Controllers\CategoryController;
 
+// Tenant POS routes (should be in routes/tenant.php)
+Route::middleware(['web', 'tenant', 'auth'])->group(function () {
 
-
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-*/
-
-// Public routes (no tenant required)
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
-// Route::get('/', function () {
-//     return view('pos.welcome'); // This should point to your actual frontend view
-// });
-Route::get('/', function () {
-    return view('pos.welcome');
-})->name('pos.welcome');
-
-Auth::routes();
-
-// Home route accessible without tenant context (optional)
-Route::get('/home', [PurchaseItemController::class, 'index'])->name('home');
-
-
-// Routes that require authentication AND tenant context
-Route::middleware(['auth', 'setTenant'])->group(function () {
+    // POS Welcome page
+    Route::get('/', function () {
+        return view('pos.welcome');
+    })->name('pos.welcome');
 
     // Admin routes
     Route::middleware('role:admin')->group(function () {
@@ -113,7 +91,6 @@ Route::middleware(['auth', 'setTenant'])->group(function () {
     Route::get('/purchaseitem/products/{categoryId}', [PurchaseItemController::class, 'getProductsByCategory']);
     Route::post('/purchaseitem/store', [PurchaseItemController::class, 'store'])->name('purchaseitem.store');
     Route::get('/purchaseitem/receipt/{id}', [PurchaseItemController::class, 'showReceipt'])->name('purchaseitem.receipt');
-
     Route::get('/cashiersales', [PurchaseItemController::class, 'cashiersales'])->name('cashiersales');
 
     // Notifications for admin and manager

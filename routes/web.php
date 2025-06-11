@@ -46,7 +46,3 @@ Route::post('/register-company', [CompanyRegistrationController::class, 'store']
 Route::post('/pay', [PaymentController::class, 'redirectToGateway'])->name('pay');
 Route::get('/payment/callback', [PaymentController::class, 'handleGatewayCallback']);
 
-// POS welcome page route (shown after successful registration)
-Route::get('/pos-welcome', function () {
-    return view('pos.welcome');
-})->name('pos.welcome');
