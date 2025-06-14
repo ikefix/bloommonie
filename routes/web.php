@@ -6,6 +6,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CompanyRegistrationController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\SubscriptionController;
 
 
 /*
@@ -43,6 +44,11 @@ Route::get('/support', function () {
 
 Route::post('/register-company', [CompanyRegistrationController::class, 'store'])->name('register-company');
 
-Route::post('/pay', [PaymentController::class, 'redirectToGateway'])->name('pay');
-Route::get('/payment/callback', [PaymentController::class, 'handleGatewayCallback']);
+
+
+Route::get('/subscribe', [SubscriptionController::class, 'showForm'])->name('subscribe.form');
+Route::post('/paystack/checkout', [SubscriptionController::class, 'redirectToGateway'])->name('paystack.checkout');
+Route::get('/paystack/callback', [SubscriptionController::class, 'handleGatewayCallback'])->name('paystack.callback');
+Route::get('/paystack/callback', [SubscriptionController::class, 'handleGatewayCallback'])->name('paystack.callback');
+
 

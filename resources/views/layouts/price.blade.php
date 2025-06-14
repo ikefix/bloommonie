@@ -50,7 +50,7 @@
                 <li>Reporting and Business Analytics</li>
                 <li>24/7 Support</li>
             </ul>
-            <form action="{{ route('pay') }}" method="POST">
+            <form action="{{ route('paystack.checkout') }}" method="POST">
                 @csrf
                 <input type="hidden" name="amount" value="150000"> <!-- NGN 1500 in Kobo -->
                 <input type="hidden" name="plan" value="lite">
@@ -69,7 +69,7 @@
                 <li>Profit & Loss Statement</li>
                 <li>24/7 Support</li>
             </ul>
-            <form action="{{ route('pay') }}" method="POST">
+            <form action="{{ route('paystack.checkout') }}" method="POST">
                 @csrf
                 <input type="hidden" name="amount" value="300000"> <!-- NGN 3000 in Kobo -->
                 <input type="hidden" name="plan" value="business">
@@ -87,7 +87,7 @@
                 <li>Expenses Tracker</li>
                 <li>24/7 Support</li>
             </ul>
-            <form action="{{ route('pay') }}" method="POST">
+            <form action="{{ route('paystack.checkout') }}" method="POST">
                 @csrf
                 <input type="hidden" name="amount" value="600000"> <!-- NGN 6000 in Kobo -->
                 <input type="hidden" name="plan" value="enterprise">
