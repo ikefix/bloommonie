@@ -42,11 +42,11 @@ class User extends Authenticatable
 
     // Relationships
 
-    // Each user belongs to one tenant
-    public function tenant()
-    {
-        return $this->belongsTo(Tenant::class);
-    }
+    // // Each user belongs to one tenant
+    // public function tenant()
+    // {
+    //     return $this->belongsTo(Tenant::class);
+    // }
 
     public function shops()
     {

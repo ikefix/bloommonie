@@ -1,82 +1,60 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use Illuminate\Http\Request;
 use Unicodeveloper\Paystack\Facades\Paystack;
 
-
 class SubscriptionController extends Controller
-
 {
-    // public function redirectToGateway(Request $request)
-    // {
-    //     $request->validate([
-    //         'email' => 'required|email',
-    //         'company_name' => 'required',
-    //         'name' => 'required',
-    //     ]);
-
-    //     session([
-    //         'company_name' => $request->company_name,
-    //         'name' => $request->name,
-    //         'email' => $request->email,
-    //         'amount' => 5000 * 100, // Amount in kobo
-    //     ]);
-
-    //     return Paystack::getAuthorizationUrl([
-    //         'email' => $request->email,
-    //         'amount' => session('amount'),
-    //         'metadata' => [
-    //             'company_name' => $request->company_name,
-    //             'name' => $request->name,
-    //         ],
-    //     ])->redirectNow();
-    // }
     public function redirectToGateway(Request $request)
-{
-    $user = auth()->user(); // make sure the user is logged in
+    {
+        // Check if user is logged in
+        if (!auth()->check()) {
+            return redirect()->route('register')->with('error', 'Please register or log in before subscribing.');
+        }
 
-    $request->validate([
-        'amount' => 'required|numeric',
-        'plan' => 'required|string',
-    ]);
+        $user = auth()->user();
 
-    $amount = $request->amount;
-    $plan = $request->plan;
+        // Validate the input
+        $request->validate([
+            'amount' => 'required|numeric',
+            'plan' => 'required|string',
+        ]);
 
-    session([
-        'plan' => $plan,
-        'amount' => $amount,
-    ]);
+        $amount = $request->amount;
+        $plan = $request->plan;
 
-    return Paystack::getAuthorizationUrl([
-        'email' => $user->email,
-        'amount' => $amount,
-        'metadata' => [
-            'user_id' => $user->id,
+        // Save subscription data in session
+        session([
             'plan' => $plan,
-        ],
-    ])->redirectNow();
+            'amount' => $amount,
+        ]);
+
+        // Redirect to Paystack
+        return Paystack::getAuthorizationUrl([
+            'email' => $user->email,
+            'amount' => $amount,
+            'metadata' => [
+                'user_id' => $user->id,
+                'plan' => $plan,
+            ],
+        ])->redirectNow();
+    }
+
+    public function handleGatewayCallback()
+    {
+        $paymentDetails = Paystack::getPaymentData(); // Returns the payment data
+
+        $user = auth()->user();
+        $plan = session('plan');
+        $amount = session('amount');
+
+        // Save subscription info to the user
+        $user->subscription_plan = $plan;
+        $user->subscription_expires_at = now()->addMonth(); // or addYear() if it's a yearly plan
+        $user->save();
+
+        return redirect()->route('home')->with('success', 'Payment successful and subscription activated!');
+    }
 }
-
-public function handleGatewayCallback()
-{
-    $paymentDetails = Paystack::getPaymentData(); // This returns the payment data
-
-    $user = auth()->user();
-    $plan = session('plan');
-    $amount = session('amount');
-
-    // Example: Save subscription info to the user or subscription table
-    $user->subscription_plan = $plan;
-    $user->subscription_expires_at = now()->addMonth(); // or addYear() if yearly
-    $user->save();
-
-    // Optional: create a record in a subscriptions table
-    // Subscription::create([...]);
-
-    return redirect()->route('dashboard')->with('success', 'Payment successful and subscription activated!');
-}
-}
-
-

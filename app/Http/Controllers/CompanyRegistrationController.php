@@ -4,11 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Mail;
+
 use App\Models\Company;
-use App\Models\Tenant;
+
 use App\Models\User;
-use App\Mail\WelcomeToPOSMail;
+
 
 class CompanyRegistrationController extends Controller
 {
@@ -47,29 +47,29 @@ class CompanyRegistrationController extends Controller
             'city' => $validated['city'],
         ]);
 
-        // 2. Create tenant
-        $subdomain = strtolower(str_replace(' ', '', $validated['company_name']));
-        $domain = $subdomain . '.bloommonie.com';
+        // // 2. Create tenant
+        // $subdomain = strtolower(str_replace(' ', '', $validated['company_name']));
+        // $domain = $subdomain . '.bloommonie.com';
 
-        $tenant = Tenant::create([
-            'company_id' => $company->id,
-            'name' => $validated['company_name'],
-            'domain' => $domain,
-        ]);
+        // $tenant = Tenant::create([
+        //     'company_id' => $company->id,
+        //     'name' => $validated['company_name'],
+        //     'domain' => $domain,
+        // ]);
 
         // 3. Seed tenant's admin user
-        $plainPassword = $validated['password'];
+        // $plainPassword = $validated['password'];
 
-        $user = User::create([
-            'tenant_id' => $tenant->id,
-            'name' => $validated['company_admin'],
-            'email' => $validated['company_email'],
-            'password' => Hash::make($plainPassword),
-            'role' => 'admin',
-        ]);
+        // $user = User::create([
+        //     'tenant_id' => $tenant->id,
+        //     'name' => $validated['company_admin'],
+        //     'email' => $validated['company_email'],
+        //     'password' => Hash::make($plainPassword),
+        //     'role' => 'admin',
+        // ]);
 
         // 4. Send welcome email with POS link
-        Mail::to($user->email)->send(new WelcomeToPOSMail($user, $tenant, $plainPassword));
+        // Mail::to($user->email)->send(new WelcomeToPOSMail($user, $tenant, $plainPassword));
 
         // 5. Redirect to POS subdomain (e.g., http://companyname.bloommonie.com)
         return redirect()->away("http://$domain");
