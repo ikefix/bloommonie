@@ -50,7 +50,7 @@ Route::post('/register-company', [CompanyRegistrationController::class, 'store']
 Route::get('/subscribe', [SubscriptionController::class, 'showForm'])->name('subscribe.form');
 Route::post('/paystack/checkout', [SubscriptionController::class, 'redirectToGateway'])->name('paystack.checkout');
 Route::get('/paystack/callback', [SubscriptionController::class, 'handleGatewayCallback'])->name('paystack.callback');
-Route::get('/paystack/callback', [SubscriptionController::class, 'handleGatewayCallback'])->name('paystack.callback');
+
 
 
 // Route::get('login', [LoginController::class, 'showLoginForm'])->name('login');
